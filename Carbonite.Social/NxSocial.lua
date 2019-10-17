@@ -1871,7 +1871,9 @@ end
 
 function Nx.Social:OnUpdateTimer()
 
-	self:CalcPunks()
+	if Nx.scdb.profile.Social.PunkEnable then
+		self:CalcPunks()
+	end
 
 	-- Check tab selection first, since they could be nil
 	if self.TabSelected == 2 and self.Win:IsShown() then
